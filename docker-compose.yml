@@ -3,4 +3,6 @@ services:
     build: .
     ports:
       - "8000:8000"
-    restart: unless-stopped
+    environment:
+      MAX_UPLOAD_MB: "15"
+      MAX_OCR_PAGES: "40"

@@ -1,1 +1,25 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cartão de Ponto — Quick Filler</title><link rel="stylesheet" href="/static/styles.css"></head><body><main><h1>Cartão de Ponto</h1><p>Envie um PDF, processe e revise a transcrição.</p><form id="form"><select name="tipo"><option value="cartao-ponto">Cartão de ponto</option><option value="holerite">Holerite</option></select><input name="arquivo" type="file" accept="application/pdf" required><button>Processar PDF</button></form><div id="status"></div><div id="app"></div></main><script src="/static/app.js"></script></body></html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quick Filler — Cartão de Ponto e Holerite</title>
+<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<main class="shell">
+  <header><div><span class="eyebrow">QUICK FILLER</span><h1>Transcrição de documentos</h1><p>Envie um PDF, revise os dados e baixe a planilha corrigida.</p></div></header>
+  <section class="card"><form id="form">
+    <label>Tipo de documento<select name="tipo"><option value="cartao-ponto">Cartão de ponto</option><option value="holerite">Holerite</option></select></label>
+    <label>PDF<input name="arquivo" type="file" accept="application/pdf" required></label>
+    <button type="submit">Processar PDF</button>
+  </form><div id="status" class="status" aria-live="polite"></div></section>
+  <section id="workspace" class="workspace hidden">
+    <div class="pdf-panel card"><h2>PDF</h2><iframe id="pdf" title="Documento PDF"></iframe></div>
+    <div class="review-panel card"><div class="review-head"><div><h2>Revisão</h2><p id="warning-summary"></p></div><button id="save" type="button">Salvar correções</button></div>
+      <div id="table-wrap" class="table-wrap"></div><div id="bases-wrap"></div>
+      <div id="downloads" class="downloads hidden"><a id="xlsx" target="_blank">Baixar XLSX</a><a id="csv" target="_blank">Baixar CSV</a><a id="json" target="_blank">Baixar JSON</a></div>
+    </div>
+  </section>
+</main><script src="/static/app.js"></script>
+</body></html>
